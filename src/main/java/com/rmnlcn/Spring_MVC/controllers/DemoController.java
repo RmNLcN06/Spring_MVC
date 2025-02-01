@@ -10,7 +10,7 @@ public class DemoController {
     // create a mapping for "/hello"
     @GetMapping("/hello")
     public String sayHello(Model theModel) {
-        theModel.addAttribute("TheDate", java.time.LocalDateTime.now());
+        theModel.addAttribute("theDate", java.time.LocalDateTime.now());
 
         return "helloworld";
     }
