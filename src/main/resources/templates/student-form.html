@@ -27,23 +27,25 @@
       <div>
         <label for="country">Country:</label>
         <select name="country" id="country" th:field="*{country}">
-          <option th:value="Brazil">Brazil</option>
+          <!-- <option th:value="Brazil">Brazil</option>
           <option th:value="France">France</option>
           <option th:value="Germany">Germany</option>
           <option th:value="Japan">Japan</option>
-          <option th:value="United-States">United-States</option>
+          <option th:value="United-States">United-States</option> -->
+          <option th:each="tempCountry : ${countries}" th:value="${tempCountry}" th:text="${tempCountry}"></option>
         </select>
       </div>
       <div>
         <label for="study">Study:</label>
         <select name="study" id="study" th:field="*{study}">
-          <option th:value="Mathematics">Mathematics</option>
+          <!-- <option th:value="Mathematics">Mathematics</option>
           <option th:value="History">History</option>
           <option th:value="Chemistry">Chemistry</option>
           <option th:value="Technology">Technology</option>
           <option th:value="English">English</option>
           <option th:value="Accounting">Accounting</option>
-          <option th:value="Law">Law</option>
+          <option th:value="Law">Law</option> -->
+          <option th:each="tempStudy : ${studies}" th:value="${tempStudy}" th:text="${tempStudy}"></option>
         </select>
       </div>
       <input type="submit" value="Submit">
