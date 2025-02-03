@@ -29,6 +29,12 @@ public class StudentController {
         // add student object to the model
         theModel.addAttribute("student", theStudent);
 
+        // add list of countries to the model
+        theModel.addAttribute("countries", countries);
+
+        // add list of studies to the model
+        theModel.addAttribute("studies", studies);
+
         return "student-form";
     }
 
