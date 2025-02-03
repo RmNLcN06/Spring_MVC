@@ -1,16 +1,25 @@
 package com.rmnlcn.Spring_MVC.controllers;
 
 import com.rmnlcn.Spring_MVC.models.Student;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 
+import java.util.List;
+
 @Controller
 public class StudentController {
 
-    // create method to show the from
+    @Value("${countries}")
+    private List<String> countries;
+
+    @Value("${studies}")
+    private List<String> studies;
+
+    // create method to show the form
     @GetMapping("/showStudentForm")
     public String showForm(Model theModel) {
 
