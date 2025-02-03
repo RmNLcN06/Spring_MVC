@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.com">
+<head>
+    <meta charset="UTF-8">
+    <title>Student Confirmation</title>
+</head>
+<body>
+    <h3>Student Confirmation</h3>
+
+    <div>
+      <p>
+        The student is confirmed: <span th:text="${student.firstName} + ' ' + ${student.lastName}"></span>
+      </p>
+      <p>
+        The age is: <span th:text="${student.age}"></span>
+      </p>
+    </div>
+</body>
+</html>
