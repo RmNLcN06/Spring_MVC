@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.com">
+<head>
+    <meta charset="UTF-8">
+    <title>Student Registration Form</title>
+</head>
+<body>
+
+    <h3>Student Registration Form</h3>
+
+    <form th:action="@{showStudentForm}" th:object="${student}" method="POST">
+      <!-- *{firstName} = ${student.firstName} -->
+      <div>
+        <label for="firstName">First name:</label>
+        <input id="firstName" type="text" th:field="*{firstName}" name="firstName">
+      </div>
+      <!-- *{lastName} = ${student.lastName} -->
+      <div>
+        <label for="lastName">Last name:</label>
+        <input id="lastName" type="text" th:field="*{lastName}" name="lastName">
+      </div>
+      <!-- *{age} = ${student.age} -->
+      <div>
+        <label for="age">Age:</label>
+        <input id="age" type="number" th:field="*{age}" name="age">
+      </div>
+      <input type="submit" value="Submit">
+    </form>
+</body>
+</html>
