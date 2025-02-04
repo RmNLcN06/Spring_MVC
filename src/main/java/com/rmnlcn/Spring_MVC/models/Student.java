@@ -13,15 +13,18 @@ public class Student {
 
     private String study;
 
+    private String favoriteLanguage;
+
     // constructors
     public Student() {}
 
-    public Student(String firstName, String lastName, int age, String country, String study) {
+    public Student(String firstName, String lastName, int age, String country, String study, String favoriteLanguage) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.age = age;
         this.country = country;
         this.study = study;
+        this.favoriteLanguage = favoriteLanguage;
     }
 
     // getters / setters
@@ -63,5 +66,13 @@ public class Student {
 
     public void setStudy(String study) {
         this.study = study;
+    }
+
+    public String getFavoriteLanguage() {
+        return favoriteLanguage;
+    }
+
+    public void setFavoriteLanguage(String favoriteLanguage) {
+        this.favoriteLanguage = favoriteLanguage;
     }
 }
