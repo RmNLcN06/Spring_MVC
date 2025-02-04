@@ -22,6 +22,9 @@ public class StudentController {
     @Value("${languages}")
     private List<String> languages;
 
+    @Value("${systems}")
+    private List<String> systems;
+
     // create method to show the form
     @GetMapping("/showStudentForm")
     public String showForm(Model theModel) {
