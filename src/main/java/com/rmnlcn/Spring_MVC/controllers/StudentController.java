@@ -44,6 +44,9 @@ public class StudentController {
         // add list of languages to the model
         theModel.addAttribute("languages", languages);
 
+        // add list of systems to the model
+        theModel.addAttribute("systems", systems);
+
         return "student-form";
     }
 
