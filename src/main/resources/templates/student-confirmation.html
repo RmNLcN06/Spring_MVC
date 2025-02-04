@@ -23,6 +23,10 @@
         <p>
             The favorite language is: <span th:text="${student.favoriteLanguage}"></span>
         </p>
+        <p>The favorite operating system(s) is / are: </p>
+        <ul>
+            <li th:each="tempOperatingSystems: ${student.favoriteOperatingSystems}" th:text="${tempOperatingSystems}"></li>
+        </ul>
     </div>
 </body>
 </html>
