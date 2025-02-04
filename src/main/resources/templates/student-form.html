@@ -50,12 +50,16 @@
       </div>
       <div>
         <h1>Favorite Programming Language:</h1>
-        <input id="python" type="radio" th:field="*{favoriteLanguage}" th:value="Python">
+        <!-- <input id="python" type="radio" th:field="*{favoriteLanguage}" th:value="Python">
         <label for="python">Python</label>
         <input id="java" type="radio" th:field="*{favoriteLanguage}" th:value="Java">
         <label for="java">Java</label>
         <input id="csharp" type="radio" th:field="*{favoriteLanguage}" th:value="Csharp">
-        <label for="csharp">C#</label>
+        <label for="csharp">C#</label> -->
+        <th:block th:each="tempLanguage: ${languages}">
+          <input id="${tempLanguage}" th:field="*{favoriteLanguage}" type="radio"  th:value="${tempLanguage}">
+          <label th:for="${tempLanguage}" th:text="${tempLanguage}"></label>
+        </th:block>
       </div>
       <input type="submit" value="Submit">
     </form>
