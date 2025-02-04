@@ -38,6 +38,8 @@ public class StudentController {
         // add list of studies to the model
         theModel.addAttribute("studies", studies);
 
+        // add list of languages to the model
+        theModel.addAttribute("languages", languages);
 
         return "student-form";
     }
