@@ -1,5 +1,7 @@
 package com.rmnlcn.Spring_MVC.models;
 
+import java.util.List;
+
 public class Student {
 
     // fields
@@ -15,16 +17,20 @@ public class Student {
 
     private String favoriteLanguage;
 
+    private List<String> favoriteOperatingSystems;
+
+
     // constructors
     public Student() {}
 
-    public Student(String firstName, String lastName, int age, String country, String study, String favoriteLanguage) {
+    public Student(String firstName, String lastName, int age, String country, String study, String favoriteLanguage, List<String> favoriteOperatingSystems) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.age = age;
         this.country = country;
         this.study = study;
         this.favoriteLanguage = favoriteLanguage;
+        this.favoriteOperatingSystems = favoriteOperatingSystems;
     }
 
     // getters / setters
@@ -74,5 +80,13 @@ public class Student {
 
     public void setFavoriteLanguage(String favoriteLanguage) {
         this.favoriteLanguage = favoriteLanguage;
+    }
+
+    public List<String> getFavoriteOperatingSystems() {
+        return favoriteOperatingSystems;
+    }
+
+    public void setFavoriteOperatingSystems(List<String> favoriteOperatingSystems) {
+        this.favoriteOperatingSystems = favoriteOperatingSystems;
     }
 }
