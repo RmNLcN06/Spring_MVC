@@ -1,14 +1,21 @@
 package com.rmnlcn.Spring_MVC.models;
 
+import jakarta.validation.constraints.NotNull;
+import jakarta.validation.constraints.Size;
+
 import java.util.List;
 
 public class Student {
 
     // fields
+    @Size(min = 2, message = "Firstname must have 2 letters min")
     private String firstName;
 
+    @Size(min = 3, message = "Lastname must have 3 letters min")
     private String lastName;
 
+    @NotNull(message = "is required")
+    @Size(min = 15, max = 65, message = "is required")
     private int age;
 
     private String country;
