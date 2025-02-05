@@ -3,10 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <title>Student Registration Form</title>
+    <!-- Reference CSS file -->
+    <link rel="stylesheet" th:href="@{/css/demo.css}"/>
 </head>
 <body>
 
-    <h3>Student Registration Form</h3>
+    <h3>Student Registration Form. (*) means required.</h3>
 
     <form th:action="@{processStudentForm}" th:object="${student}" method="POST">
       <!-- *{firstName} = ${student.firstName} -->
@@ -21,8 +23,9 @@
       </div>
       <!-- *{age} = ${student.age} -->
       <div>
-        <label for="age">Age:</label>
+        <label for="age">Age (*):</label>
         <input id="age" type="number" th:field="*{age}" name="age">
+        <span th:if="${#fields.hasErrors('age')}" th:errors="*{age}" class="error"></span>
       </div>
       <div>
         <label for="country">Country:</label>
