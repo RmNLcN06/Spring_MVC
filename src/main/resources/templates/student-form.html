@@ -27,7 +27,6 @@
       <div>
         <label for="age">Age (*):</label>
         <input id="age" type="number" th:field="*{age}" name="age">
-        <span th:if="${#fields.hasErrors('age')}" th:errors="*{age}" class="error"></span>
       </div>
       <div>
         <label for="country">Country:</label>
