@@ -56,7 +56,8 @@ public class StudentController {
     public String processStudentForm(@Valid @ModelAttribute("student") Student theStudent, BindingResult theBindingResult) {
 
         // log the input data
-        System.out.println("theStudent: " + theStudent.getFirstName() + " " + theStudent.getLastName() + " / Age: " + theStudent.getAge());
+        // System.out.println("theStudent: " + theStudent.getFirstName() + " " + theStudent.getLastName() + " / Age: " + theStudent.getAge());
+        System.out.println("First name: |" + theStudent.getFirstName() + "| " + "Last name: |" + theStudent.getLastName());
 
         if (theBindingResult.hasErrors()) {
             return "student-form";
