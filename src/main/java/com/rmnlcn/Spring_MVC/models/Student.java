@@ -1,26 +1,29 @@
 package com.rmnlcn.Spring_MVC.models;
 
-import jakarta.validation.constraints.Max;
-import jakarta.validation.constraints.Min;
-import jakarta.validation.constraints.NotNull;
-import jakarta.validation.constraints.Size;
+import jakarta.validation.constraints.*;
 
 import java.util.List;
 
 public class Student {
 
     // fields
+    @Pattern(regexp = "^[a-zA-Z]{25}", message = "only 25 chars")
     @NotNull(message = "is required")
     @Size(min = 2, message = "First name is required and must have 2 letters min")
     private String firstName;
 
+    @Pattern(regexp = "^[a-zA-Z]{25}", message = "only 25 chars")
     @NotNull(message = "is required")
     @Size(min = 3, message = "Last name is required and must have 3 letters min")
     private String lastName;
 
+    @Pattern(regexp = "^[0-9]{2}", message = "only 2 digits")
     @Min(value = 17, message = "must be greater than or equal to 17")
     @Max(value = 35, message = "must be less than or equal to 35")
     private int age;
+
+    @Pattern(regexp = "^[a-zA-Z0-9]{5}", message = "only 5 chars/digits")
+    private String postalCode;
 
     private String country;
 
@@ -34,10 +37,11 @@ public class Student {
     // constructors
     public Student() {}
 
-    public Student(String firstName, String lastName, int age, String country, String study, String favoriteLanguage, List<String> favoriteOperatingSystems) {
+    public Student(String firstName, String lastName, int age, String postalCode, String country, String study, String favoriteLanguage, List<String> favoriteOperatingSystems) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.age = age;
+        this.postalCode = postalCode;
         this.country = country;
         this.study = study;
         this.favoriteLanguage = favoriteLanguage;
@@ -99,5 +103,13 @@ public class Student {
 
     public void setFavoriteOperatingSystems(List<String> favoriteOperatingSystems) {
         this.favoriteOperatingSystems = favoriteOperatingSystems;
+    }
+
+    public String getPostalCode() {
+        return postalCode;
+    }
+
+    public void setPostalCode(String postalCode) {
+        this.postalCode = postalCode;
     }
 }
