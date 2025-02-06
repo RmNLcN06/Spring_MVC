@@ -7,17 +7,16 @@ import java.util.List;
 public class Student {
 
     // fields
-    @Pattern(regexp = "^[a-zA-Z]{25}", message = "only 25 chars")
+    @Pattern(regexp = "^[a-zA-Z]{2,25}", message = "only 25 chars")
     @NotNull(message = "is required")
     @Size(min = 2, message = "First name is required and must have 2 letters min")
     private String firstName;
 
-    @Pattern(regexp = "^[a-zA-Z]{25}", message = "only 25 chars")
+    @Pattern(regexp = "^[a-zA-Z]{3,25}", message = "only 25 chars")
     @NotNull(message = "is required")
     @Size(min = 3, message = "Last name is required and must have 3 letters min")
     private String lastName;
 
-    @Pattern(regexp = "^[0-9]{2}", message = "only 2 digits")
     @Min(value = 17, message = "must be greater than or equal to 17")
     @Max(value = 35, message = "must be less than or equal to 35")
     private int age;
