@@ -1,5 +1,6 @@
 package com.rmnlcn.Spring_MVC.models;
 
+import com.rmnlcn.Spring_MVC.validations.StudentCode;
 import jakarta.validation.constraints.*;
 
 import java.util.List;
@@ -25,6 +26,9 @@ public class Student {
     @Pattern(regexp = "^[a-zA-Z0-9]{5}", message = "only 5 chars/digits")
     private String postalCode;
 
+    @StudentCode
+    private String studentCode;
+
     private String country;
 
     private String study;
@@ -37,11 +41,12 @@ public class Student {
     // constructors
     public Student() {}
 
-    public Student(String firstName, String lastName, int age, String postalCode, String country, String study, String favoriteLanguage, List<String> favoriteOperatingSystems) {
+    public Student(String firstName, String lastName, Integer age, String postalCode, String studentCode, String country, String study, String favoriteLanguage, List<String> favoriteOperatingSystems) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.age = age;
         this.postalCode = postalCode;
+        this.studentCode = studentCode;
         this.country = country;
         this.study = study;
         this.favoriteLanguage = favoriteLanguage;
@@ -111,5 +116,13 @@ public class Student {
 
     public void setPostalCode(String postalCode) {
         this.postalCode = postalCode;
+    }
+
+    public String getStudentCode() {
+        return studentCode;
+    }
+
+    public void setStudentCode(String studentCode) {
+        this.studentCode = studentCode;
     }
 }
