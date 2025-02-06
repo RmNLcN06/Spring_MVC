@@ -35,6 +35,11 @@
         <span th:if="${#fields.hasErrors('postalCode')}" th:errors="*{postalCode}" class="error"></span>
       </div>
       <div>
+        <label for="studentCode">Student Code:</label>
+        <input id="studentCode" type="text" th:field="*{studentCode}" name="studentCode">
+        <span th:if="${#fields.hasErrors('studentCode')}" th:errors="*{studentCode}" class="error"></span>
+      </div>
+      <div>
         <label for="country">Country:</label>
         <select name="country" id="country" th:field="*{country}">
           <!-- <option th:value="Brazil">Brazil</option>
