@@ -15,7 +15,15 @@ public class StudentCodeConstraintValidator implements ConstraintValidator<Stude
     @Override
     public boolean isValid(String theCode, ConstraintValidatorContext theConstraintValidatorContext) {
 
-        boolean result = theCode.startsWith(studentPrefix);
+        boolean result;
+
+        if(theCode != null) {
+            result = theCode.startsWith(studentPrefix);
+        }
+        else {
+            result = true;
+        }
+
         return result;
     }
 }

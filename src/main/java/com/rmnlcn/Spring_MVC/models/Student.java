@@ -26,7 +26,7 @@ public class Student {
     @Pattern(regexp = "^[a-zA-Z0-9]{5}", message = "only 5 chars/digits")
     private String postalCode;
 
-    @StudentCode
+    @StudentCode(value="STUDENT", message="must start with STUDENT prefix")
     private String studentCode;
 
     private String country;
